@@ -1,0 +1,9 @@
+name: TelegramControl
+version: 1.0
+main: io.github.r4nx.telegramcontrol.Main
+author: Ranx
+commands:
+  telegramcontrol:
+    description: Main command
+    usage: /<command>
+    aliases: tc
