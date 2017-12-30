@@ -50,7 +50,7 @@ public class TelegramCommandExecutor {
                 case "/players":
                     ArrayList<String> players = new ArrayList<>();
                     plugin.getServer().getOnlinePlayers().forEach(player -> players.add(player.getName()));
-                    plugin.telegram.sendMessage(from, "Online players: " + Joiner.on(", ").join(players), false);
+                    plugin.telegram.sendMessage(from, String.format("Online players [%d/%d]: ", players.size(), plugin.getServer().getMaxPlayers()) + Joiner.on(", ").join(players), false);
                     break;
                 default:
                     plugin.telegram.sendMessage(from, "Unknown command!", false);

@@ -3,6 +3,7 @@ package io.github.r4nx.telegramcontrol;
 import io.github.r4nx.telegramcontrol.commands.TelegramControlCommand;
 import io.github.r4nx.telegramcontrol.telegram.Telegram;
 import io.github.r4nx.telegramcontrol.telegram.TelegramCommandExecutor;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -34,11 +35,13 @@ public class Main extends JavaPlugin {
         telegram.setLastUpdate(config.getInt("telegram.lastUpdate"));
         telegram.setLastMessage(config.getInt("telegram.lastMessage"));
         TelegramCommandExecutor telegramCommandExecutor = new TelegramCommandExecutor(this);
+        Metrics metrics = new Metrics(this);
 
         if (telegram.testConnection()) getLogger().info("Connection established!");
         else {
             getLogger().warning("Connection failed!");
             getServer().getPluginManager().disablePlugin(this);
+            return;
         }
 
         getServer().getScheduler().scheduleSyncRepeatingTask(this,
