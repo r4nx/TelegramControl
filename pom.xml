@@ -6,7 +6,7 @@
 
     <groupId>io.github.r4nx</groupId>
     <artifactId>telegramcontrol</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <name>TelegramControl</name>
     <description>Control your Minecraft server with Telegram</description>

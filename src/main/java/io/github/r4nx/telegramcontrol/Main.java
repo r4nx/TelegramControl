@@ -27,6 +27,7 @@ public class Main extends JavaPlugin {
         config.addDefault("telegram.updatesCheckInterval", 100L);
         config.addDefault("telegram.lastUpdate", 0);
         config.addDefault("telegram.lastMessage", 0);
+        config.addDefault("execEnabled", true);
         config.addDefault("logTelegramCommands", false);
         config.options().copyDefaults(true);
         saveConfig();

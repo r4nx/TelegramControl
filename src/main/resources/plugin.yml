@@ -1,5 +1,5 @@
 name: TelegramControl
-version: 1.1
+version: 1.2
 main: io.github.r4nx.telegramcontrol.Main
 author: Ranx
 commands:
